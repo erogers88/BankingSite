@@ -3,18 +3,18 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27004.2005
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "BankingSite", "..\..\WebSites\BankingSite\", "{F18E4B3A-0B1F-4D58-8533-F810F537A7C6}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "BankingSite", "..\..\BankingSite\", "{F18E4B3A-0B1F-4D58-8533-F810F537A7C6}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.6.1"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_63284"
-		Debug.AspNetCompiler.PhysicalPath = "..\..\WebSites\BankingSite\"
+		Debug.AspNetCompiler.PhysicalPath = "..\..\BankingSite\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_63284\"
 		Debug.AspNetCompiler.Updateable = "true"
 		Debug.AspNetCompiler.ForceOverwrite = "true"
 		Debug.AspNetCompiler.FixedNames = "false"
 		Debug.AspNetCompiler.Debug = "True"
 		Release.AspNetCompiler.VirtualPath = "/localhost_63284"
-		Release.AspNetCompiler.PhysicalPath = "..\..\WebSites\BankingSite\"
+		Release.AspNetCompiler.PhysicalPath = "..\..\BankingSite\"
 		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_63284\"
 		Release.AspNetCompiler.Updateable = "true"
 		Release.AspNetCompiler.ForceOverwrite = "true"
