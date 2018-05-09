@@ -12,9 +12,11 @@
     <div id="header" runat="server" class="headerNav"></div>
     <form id="newUserForm" runat="server">
         <div id="newUserFormIntroText" runat="server"></div><br /><br />
-        <input id="newUserInputEmail" runat="server" type="text" /><br />
-        <input id="newUserInputFirstName" runat="server" type="text" /><br />
-        <input id="newUserInputLastName" runat="server" type ="text" /><br />
+        <input id="newUserFirstName" runat="server" type="text" /><br />
+        <input id="newUserLastName" runat="server" type="text" /><br />
+        <input id="newUserUserName" runat="server" type ="text" /><br />
+        <input id="newUserEmail" runat="server" type ="text" /><br />
+        <button id="newUserSubmitButton" runat="server" class ="button" onserverclick="SubmitClick">Submit</button> <br />
     </form>
     <div id="afterNewUserFormDiv" runat="server"></div>
 </body>
