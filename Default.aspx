@@ -10,7 +10,12 @@
 </head>
 <body>
     <div id="globalHeader" runat="server" class="globalheaderNav"></div>
-    <div id="header" runat="server" class="headerNav"></div><br />
+    <div id="header" runat="server" class="headerNav"></div>
+    <div id="signInLinkContainingDiv" runat="server" class="headerLinkContainingDiv">
+        <a href="SignIn.aspx" id="signInLink" runat="server" class="headerLink"></a>
+    </div><br /> 
+    <div id="registrationLink" runat="server" class="headerLink"></div><br />
+    <br />
     <form id="newUserForm" runat="server">
         <div id="newUserFormIntroText" runat="server" class="formIntro"></div><br /><br />
         <div id="newUserFirstNameText" runat="server" class="formDetail"></div>
@@ -21,7 +26,7 @@
         <input id="newUserUserName" runat="server" type ="text" /><br /><br />
         <div id="newUserEmailText" runat="server" class="formDetail"></div>
         <input id="newUserEmail" runat="server" type ="text" /><br /><br />
-        <button id="newUserSubmitButton" runat="server" class ="button" onserverclick="SubmitClick">Submit</button> <br />
+        <button id="newUserSubmitButton" runat="server" class ="button" onserverclick="SubmitNewUser">Submit</button> <br />
     </form>
     <div id="afterNewUserFormDiv" runat="server"></div>
 </body>
