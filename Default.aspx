@@ -9,13 +9,18 @@
     <title id="newUserTitle" runat="server"></title>
 </head>
 <body>
-    <div id="header" runat="server" class="headerNav"></div>
+    <div id="globalHeader" runat="server" class="globalheaderNav"></div>
+    <div id="header" runat="server" class="headerNav"></div><br />
     <form id="newUserForm" runat="server">
-        <div id="newUserFormIntroText" runat="server"></div><br /><br />
-        <input id="newUserFirstName" runat="server" type="text" /><br />
-        <input id="newUserLastName" runat="server" type="text" /><br />
-        <input id="newUserUserName" runat="server" type ="text" /><br />
-        <input id="newUserEmail" runat="server" type ="text" /><br />
+        <div id="newUserFormIntroText" runat="server" class="formIntro"></div><br /><br />
+        <div id="newUserFirstNameText" runat="server" class="formDetail"></div>
+        <input id="newUserFirstName" runat="server" type="text" /><br /><br />
+        <div id="newUserLastNameText" runat="server" class="formDetail"></div>
+        <input id="newUserLastName" runat="server" type="text" /><br /><br />
+        <div id="newUserUserNameText" runat="server" class="formDetail"></div>
+        <input id="newUserUserName" runat="server" type ="text" /><br /><br />
+        <div id="newUserEmailText" runat="server" class="formDetail"></div>
+        <input id="newUserEmail" runat="server" type ="text" /><br /><br />
         <button id="newUserSubmitButton" runat="server" class ="button" onserverclick="SubmitClick">Submit</button> <br />
     </form>
     <div id="afterNewUserFormDiv" runat="server"></div>

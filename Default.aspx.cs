@@ -12,8 +12,13 @@ public partial class _Default : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         this.newUserTitle.Text = "Eriks Banking Site";
+        this.globalHeader.InnerHtml = "The Dopest Bank Website Ever";
         this.header.InnerHtml = "New User Registration";
         this.newUserFormIntroText.InnerHtml = "Please enter your name.";
+        this.newUserFirstNameText.InnerHtml = "First Name:";
+        this.newUserLastNameText.InnerHtml = "Last Name:";
+        this.newUserUserNameText.InnerHtml = "Username:";
+        this.newUserEmailText.InnerHtml = "Email:";
         newUserSubmitButton.ServerClick += new EventHandler(this.SubmitClick);
     }
 
