@@ -1,7 +1,14 @@
 ﻿body {
     text-align:left;
 }
-.headerNav{
+.globalheaderNav{
     text-align:center;
+    border:groove;
     font-size:60px;
+}
+.headerNav{
+    text-align:left;
+    margin-left: 5px;
+    font-size:20px;
+    border-bottom:solid;
 }
