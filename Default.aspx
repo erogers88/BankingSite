@@ -10,9 +10,9 @@
 </head>
 <body>
     <div id="globalHeader" runat="server" class="globalheaderNav"></div>
-    <div id="header" runat="server" class="headerNav"></div>
-    <div id="signInLinkContainingDiv" runat="server" class="headerLinkContainingDiv">
-        <a href="SignIn.aspx" id="signInLink" runat="server" class="headerLink"></a>
+    <div id="header" runat="server" class="headerNav">
+        <div id="signInLinkContainingDiv" runat="server" class="headerLinkContainingDiv">
+        </div>
     </div><br /> 
     <div id="registrationLink" runat="server" class="headerLink"></div><br />
     <br />
