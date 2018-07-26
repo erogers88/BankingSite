@@ -1,14 +1,22 @@
 ﻿body {
-    text-align:left;
+    text-align: left;
 }
-.globalheaderNav{
-    text-align:center;
-    border:groove;
-    font-size:60px;
+.globalheaderNav {
+    text-align: center;
+    border: groove;
+    font-size: 60px;
 }
-.headerNav{
-    text-align:left;
+.headerNav {
+    text-align: left;
     margin-left: 5px;
-    font-size:20px;
-    border-bottom:solid;
+    font-size: 20px;
+    border-bottom: solid;
+}
+.headerLinkContainingDiv{
+    text-align:right;
+}
+.headerLink{
+    margin-left:20px;
+    margin-right:20px;
+    max-width:400px;
 }
