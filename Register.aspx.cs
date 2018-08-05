@@ -21,7 +21,6 @@ public partial class Register : System.Web.UI.Page
         this.newUserUserNameText.InnerHtml = "Username:";
         this.newUserEmailText.InnerHtml = "Email:";
         this.afterNewUserFormDiv.InnerHtml = "This is a div after the form.";
-        newUserSubmitButton.ServerClick += new EventHandler(this.SubmitNewUser);
     }
     public void SubmitNewUser(object sender, EventArgs e)
     {
