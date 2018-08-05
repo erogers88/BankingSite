@@ -25,13 +25,13 @@ namespace Submit
         {
             using (System.Data.SqlClient.SqlConnection dbConnection = new System.Data.SqlClient.SqlConnection(DB.connectionString))
             {
-                string commandText = "insert into users(firstName,lastName,userName,email)values(@firstName,@lastName,@userName,@email);";
+                string commandText = "dbo.CreateUser";
                 System.Data.SqlClient.SqlCommand dbCommand = new System.Data.SqlClient.SqlCommand(commandText, dbConnection);
+                dbCommand.CommandType = System.Data.CommandType.StoredProcedure;
                 dbCommand.Parameters.AddWithValue("@firstName", firstNameV);
                 dbCommand.Parameters.AddWithValue("@lastName", lastNameV);
                 dbCommand.Parameters.AddWithValue("@userName", userNameV);
                 dbCommand.Parameters.AddWithValue("@email", emailV);
-                dbCommand.CommandType = System.Data.CommandType.Text;
                 dbConnection.Open();
                 dbCommand.ExecuteNonQuery();
                 dbConnection.Close();
