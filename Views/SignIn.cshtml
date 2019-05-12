@@ -1,0 +1,35 @@
+﻿@{
+    string Title = "Eriks Banking Site";
+    string GlobalHeaderText = "The Dopest Bank Website Ever";
+    string AfterNewUserFormDiv = "This is the sign-in page. And this div should come after a form.";
+}
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="/Content/GlobalStyle.css" type="text/css" />
+    <title id="newUserTitle">
+        @Title
+    </title>
+</head>
+<body>
+    <div id="globalHeader" class="globalheaderNav">
+        @GlobalHeaderText
+    </div>
+    <div id="header" class="headerNav">
+        <div id="defaultLinkContainingDiv" class="headerLinkContainingDiv">
+            <a href="~/Views/Default.cshtml" id="defaultLink" class="headerLink">Home Page</a>
+        </div>
+        <div id="signInLinkContainingDiv" class="headerLinkContainingDiv">
+            <a href="~/Views/SignIn.cshtml" id="signInLink" class="headerLink">Sign in</a>
+        </div>
+        <div id="registerLinkContainingDiv" class="headerLinkContainingDiv">
+            <a href="~/Views/Register.cshtml" id="registerLink" class="headerLink">Register</a>
+        </div>
+    </div>
+    <br />
+    <div id="afterNewUserFormDiv">
+        @AfterNewUserFormDiv
+    </div>
+</body>
+</html>
