@@ -1,0 +1,116 @@
+﻿@{ 
+    string Title = "Eriks Banking Site";
+    string GlobalHeaderText = "The Dopest Bank Website Ever";
+    string MainContents = "This is the register page.";
+}
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="/Content/GlobalStyle.css" type="text/css" />
+    <title id="newUserTitle">
+        @Title
+    </title>
+</head>
+<body>
+    <div id="globalHeader" class="globalheaderNav">
+        @GlobalHeaderText
+    </div>
+    <div id="header" class="headerNav">
+        <div id="defaultLinkContainingDiv" class="headerLinkContainingDiv">
+            <a href="~/Views/Default.cshtml" id="defaultLink" class="headerLink">Home Page</a>
+        </div>
+        <div id="signInLinkContainingDiv" class="headerLinkContainingDiv">
+            <a href="~/Views/SignIn.cshtml" id="signInLink" class="headerLink">Sign in</a>
+        </div>
+        <div id="registerLinkContainingDiv" class="headerLinkContainingDiv">
+            <a href="~/Views/Register.cshtml" id="registerLink" class="headerLink">Register</a>
+        </div>
+    </div>
+    <br />
+    <br />
+    <br />
+
+    @{
+        string newUserFormIntroText = "Please enter your name.";
+        string newUserFirstNameText = "First Name:";
+        string newUserLastNameText = "Last Name:";
+        string newUserUserNameText = "Username:";
+        string newUserEmailText = "Email:";
+        string ErrorMessageUserNameForm = "You must enter a username";
+        string ErrorMessageUserEmailForm = "You must enter an email address";
+        Validation.RequireField("newUserUserName", ErrorMessageUserNameForm);
+        Validation.RequireField("newUserEmail", ErrorMessageUserEmailForm);
+
+        if (IsPost)
+        {
+            if(Validation.IsValid())
+            {
+
+                string firstNameV = Request.Form["newUserFirstName"];
+                string lastNameV = Request.Form["newUserLastName"];
+                string userNameV = Request.Form["newUserUserName"];
+                string emailV = Request.Form["newUserEmail"];
+
+                string connectionString = @"Data Source = (local)\SQLEXPRESS; Initial Catalog = Bank; Integrated Security = True";
+                using (System.Data.SqlClient.SqlConnection dbConnection = new System.Data.SqlClient.SqlConnection(connectionString))
+                {
+                    string commandText = "dbo.CreateUser";
+                    System.Data.SqlClient.SqlCommand dbCommand = new System.Data.SqlClient.SqlCommand(commandText, dbConnection);
+                    dbCommand.CommandType = System.Data.CommandType.StoredProcedure;
+                    dbCommand.Parameters.AddWithValue("@firstName", firstNameV);
+                    dbCommand.Parameters.AddWithValue("@lastName", lastNameV);
+                    dbCommand.Parameters.AddWithValue("@userName", userNameV);
+                    dbCommand.Parameters.AddWithValue("@email", emailV);
+                    dbConnection.Open();
+                    dbCommand.ExecuteNonQuery();
+                    dbConnection.Close();
+                }
+            }
+        }
+    }
+
+    <form id="newUserForm" method="post">
+        <div id="newUserFormIntroText" class="formIntro">
+            @newUserFormIntroText
+        </div>
+        <br />
+        <br />
+        <div id="newUserFirstNameText" class="formDetail">
+            @newUserFirstNameText
+        </div>
+        <input type="text" name="newUserFirstName" value="@Request.Form["newUserFirstName"]" />
+        <br />
+        <br />
+        <div id="newUserLastNameText" class="formDetail">
+            @newUserLastNameText
+        </div>
+        <input type="text" name="newUserLastName" value="@Request.Form["newUserLastName"]" />
+        <br />
+        <br />
+        <div id="newUserUserNameText" class="formDetail">
+            @newUserUserNameText
+        </div>
+        <input type="text" name="newUserUserName" value="@Request.Form["newUserUserName"]" />
+        <div id="newUserUserNameValidationMessage" class="validationMessage">
+            @Html.ValidationMessage("newUserUserName");
+        </div>
+        <br />
+        <br />
+        <div id="newUserEmailText" class="formDetail">
+            @newUserEmailText
+        </div>
+        <input type="text" name="newUserEmail" value="@Request.Form["newUserEmail"]" />
+        <div id="newUserUserNameValidationMessage" class="validationMessage">
+            @Html.ValidationMessage("newUserEmail");
+        </div>
+        <br />
+        <br />
+        <input type="submit" name="newUserSubmitButton" class="button" value="Submit" />
+        <br />
+    </form>
+    <div id="MainContentsDiv">
+        @MainContents
+    </div>
+</body>
+</html>
